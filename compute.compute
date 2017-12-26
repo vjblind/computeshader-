@@ -1,0 +1,25 @@
+﻿#pragma kernel CSMain
+#include "noiseSimplex.cginc"
+struct Vert
+{ 
+	float3 pos;
+ };
+
+
+float3 pos;
+//float rand(float n) { return frac(sin(n) * 43758.5453123); }
+
+RWStructuredBuffer<Vert>dataBuffer;
+
+float deltaTime;
+
+[numthreads(128, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+	//float3 dir = normalize(float3(0,0,0) - dataBuffer[id.x].pos);
+	 
+	//if(id.x<1000)
+	//dataBuffer[id.x].pos +=0.01;
+		//(0.1*-dir*rand(dataBuffer[id.x].pos.x+ -dataBuffer[id.x].pos.y)*100)*sin(deltaTime);
+ 
+}
